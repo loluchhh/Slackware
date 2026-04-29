@@ -39,3 +39,23 @@
        slackpkg install-new  
        slackpkg upgrade-all  
        slackpkg clean-system  
+
+
+3. Создание iso со своими tagfile  
+   3.1 Выбираем зеркало на https://mirrors.slackware.com/mirrorlist/  
+   3.2 Качаем файлы  
+       rsync -avPH --delete rsync:chosen-mirror /where-to-download/slackware-iso/  
+   3.3 Меняем tagfiles на свои  
+       for series in ~/Загрузки/edited-tagfiles/*; do  
+         name=$(basename "$series")  
+         sudo cp "$series/tagfile" /mnt/myslack/slackware64/$name/tagfile  
+       done  
+   3.4 Собираем ISO
+       Пеереходим в /where-to-download/slackware/ и выполняем
+       xorriso -as mkisofs -iso-level 3 -full-iso9660-filenames -R -J -A "Slackware Install" -hide-rr-moved -v -d -N -eltorito-boot isolinux/isolinux.bin -eltorito-catalog isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin -eltorito-alt-boot -e isolinux/efiboot.img -no-emul-boot -isohybrid-gpt-basdat -volid "SlackDVD" -output ~/WHERE-TO-SAVE/name-of-iso.iso .  
+
+
+
+
+
+   
