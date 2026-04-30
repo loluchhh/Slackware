@@ -23,7 +23,7 @@ e2fsprogs:ADD
 ed:SKP
 efibootmgr:ADD
 efivar:ADD
-elilo:ADD
+elilo:SKP
 elogind:ADD
 elvis:SKP
 etc:ADD
@@ -40,7 +40,7 @@ glibc-zoneinfo:ADD
 gpm:SKP
 gptfdisk:ADD
 grep:ADD
-grub:SKP
+grub:ADD
 gzip:ADD
 haveged:SKP
 hdparm:ADD
