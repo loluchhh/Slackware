@@ -96,7 +96,7 @@ slackpkg update
 slackpkg upgrade slackpkg
 slackpkg new-config
 slackpkg upgrade aaa_glibc-solibs
-slackpkg install-new
+slackpkg install-new попробовать не делать, докачивает тонну хлама
 slackpkg upgrade-all
 slackpkg clean-system
 ```
