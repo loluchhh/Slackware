@@ -39,7 +39,18 @@ qemu-system-x86_64 \
   -display gtk
 ```
 
-Дальше стандартная установка системы.
+Дальше стандартная установка системы.  
+После завершения установки не перезагружаясь выходим из установщика в терминал и устанавливаем загрузчик GRUB  
+
+```bash
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+mount --bind /dev /mnt/dev
+mount --bind /sys/firmware/efi/efivars /mnt/sys/firmware/efi/efivars
+chroot /mnt
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Slackware
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### 1.4 Запуск установленной системы
 
