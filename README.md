@@ -90,14 +90,19 @@ nano /etc/slackpkg/mirrors
 # Раскомментировать нужное зеркало
 ```
 
-### 2.3 Блокировка пакетов ядра
+### 2.3 Доустановить то что надо
+```bash
+slackpkg install dav1d, gcc-rust, libdeflate, libdisplay-info, lua, nghttp3, ngtcp2, pkgconf, seatd, wireplumber, wlroots
+```
+
+### 2.4 Блокировка пакетов ядра
 
 ```bash
 nano /etc/slackpkg/blacklist
 # Раскомментировать пакеты ядра
 ```
 
-### 2.4 Обновление системы
+### 2.5 Обновление системы
 
 Документация: [slackpkg](https://docs.slackware.com/slackware:slackpkg) · [systemupgrade](https://docs.slackware.com/howtos:slackware_admin:systemupgrade)
 
