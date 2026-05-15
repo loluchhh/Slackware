@@ -6,7 +6,21 @@
 
 ```bash
 git clone https://github.com/loluchh/Slackware
-cd Slackware/tagfiles
+```
+
+Скачиваем дерево Slackware, которое потом и будем собирать в iso
+
+```bash
+rsync -avPH --delete rsync://mirror.de.leaseweb.net/slackware/ slackware-iso/
+```
+
+Меняем в скачанном дереве все тегфайлы на кастомные
+
+```bash
+for series in Slackware/tagfiles/*; do
+  name=$(basename "$series")
+  cp "$series/tagfile" slackware-iso/slackware64/$name/tagfile
+done
 ```
 
 Далее сборка самого iso
@@ -29,7 +43,7 @@ xorriso -as mkisofs \
   -no-emul-boot \
   -isohybrid-gpt-basdat \
   -volid "SlackDVD" \
-  -output ~/path/to/output.iso \
+  -output slackware.iso \
   .
 ```
 
