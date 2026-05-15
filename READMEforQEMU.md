@@ -1,6 +1,6 @@
-**Установка и конфигурация Slackware**
+# Установка и конфигурация Slackware
 
-Пакеты в tagfile's заточены конкретно под ноут Alienware m18 r1 (r9 7945hx + radeon rx 7900m)
+Пакеты в tagfiles заточены конкретно под ноут Alienware m18 r1 (r9 7945hx + radeon rx 7900m)
 
 # Создание модифицированного iso
 
