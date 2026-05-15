@@ -29,7 +29,7 @@ ethtool:SKP
 fetchmail:SKP
 getmail:SKP
 gnupg:ADD
-gnupg2:SKP
+gnupg2:ADD
 gnutls:SKP
 gpa:SKP
 gpgme:SKP
@@ -49,7 +49,7 @@ irssi:SKP
 iw:ADD
 krb5:SKP
 lftp:SKP
-libassuan:SKP
+libassuan:ADD
 libgcrypt:ADD
 libgpg-error:ADD
 libksba:SKP
@@ -90,7 +90,7 @@ netkit-rwall:SKP
 netkit-rwho:SKP
 netkit-timed:SKP
 netpipes:SKP
-nettle:SKP
+nettle:ADD
 netwatch:SKP
 network-scripts:ADD
 netwrite:SKP
@@ -101,7 +101,7 @@ nftables:SKP
 nghttp2:ADD
 nmap:SKP
 nn:SKP
-npth:SKP
+npth:ADD
 nss-pam-ldapd:SKP
 ntp:SKP
 obexftp:SKP

@@ -84,7 +84,7 @@ nvi:SKP
 openssl-solibs:ADD
 os-prober:SKP
 pam:ADD
-patch:SKP
+patch:ADD
 pciutils:ADD
 pcmciautils:SKP
 pkgtools:ADD
