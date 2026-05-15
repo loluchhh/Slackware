@@ -373,6 +373,6 @@ vte:SKP
 wavpack:SKP
 woff2:SKP
 xapian-core:SKP
-xxHash:SKP
+xxHash:ADD
 zlib:ADD
 zstd:ADD
