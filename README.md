@@ -67,6 +67,13 @@ qemu-system-x86_64 \
   -display gtk
 ```
 
+### 1.5 Подключение к интернету в виртуалке
+```bash
+dhcpcd eth0
+
+# Проверка
+ping slackware.com
+```
 ---
 
 ## 2. Настройка системы после установки
@@ -74,25 +81,29 @@ qemu-system-x86_64 \
 ### 2.1 Подключение к интернету
 
 ```bash
-# В виртуалке
-dhcpcd eth0
+# Определяем имя интерфейса (обычно wlan0)
+ip link show
 
-# Проверка
-ping slackware.com
+# Без кавычек WiFi-name и WiFi-password
+wpa_passphrase WiFi-name WiFi-password > /etc/wpa_supplicant.conf
+
+# Запускаем wpa_supplicant
+wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+
+# Получаем ip
+dhcpcd wlan0
 ```
-
-> На реальном железе — через `wpa_supplicant` + `dhcpcd`.
 
 ### 2.2 Настройка зеркала
 
 ```bash
-nano /etc/slackpkg/mirrors
 # Раскомментировать нужное зеркало
+nano /etc/slackpkg/mirrors
 ```
 
-### 2.3 Доустановить то что надо
+### 2.3 Доустановить то, что надо, но чего не было в tagfile's
 ```bash
-slackpkg install dav1d, gcc-rust, libdeflate, libdisplay-info, lua, nghttp3, ngtcp2, pkgconf, seatd, wireplumber, wlroots
+slackpkg install dav1d, gcc-rust, libdeflate, libdisplay-info, lua, nghttp3, ngtcp2, pkgconf, seatd, wireplumber, wlroots, libxcvt, libei, libdecor
 ```
 
 ### 2.4 Блокировка пакетов ядра
@@ -112,7 +123,6 @@ slackpkg update
 slackpkg upgrade slackpkg
 slackpkg new-config
 slackpkg upgrade aaa_glibc-solibs
-slackpkg install-new попробовать не делать, докачивает тонну хлама
 slackpkg upgrade-all
 slackpkg clean-system
 ```
