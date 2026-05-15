@@ -125,7 +125,7 @@ pssh:SKP
 rdist:SKP
 rp-pppoe:SKP
 rpcbind:SKP
-rsync:SKP
+rsync:ADD
 s-nail:SKP
 samba:SKP
 slrn:SKP
