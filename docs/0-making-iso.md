@@ -12,7 +12,7 @@ mkdir isofolder
 git clone https://github.com/loluchhh/slackware
 ```
 
-Выбираем зеркало на mirrors.slackware.com и скачиваем актуальные файлы Slackware для iso
+Выбираем зеркало на [mirrors.slackware.com](https://mirrors.slackware.com/mirrorlist/) и скачиваем актуальные файлы Slackware для iso
 
 ```bash
 # Ссылка без https
